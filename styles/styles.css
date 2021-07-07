@@ -1,6 +1,8 @@
 :root {
     --colour1: #ffdbaa;
-    --colour2: rgb(255, 255, 255)
+    --colour2: rgb(255, 255, 255);
+    --colour3: #f97f60;
+    
 }
 
 * {
@@ -54,6 +56,16 @@
 .right-nav > a {
     font-size: 13px;
 }
+
+/* .dropdown {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+.apps-dots:hover + .dropdown {
+    display: block;
+} */
 
 .sign-in {
     background-color: #1a73e8;
@@ -241,6 +253,8 @@ a:active {
     background-color: var(--colour1);
     top:110px;
     box-shadow: 17px 2px var(--colour2),34px -5px var(--colour1), 51px 1px var(--colour2),68px -5px var(--colour1),85px 3px var(--colour2), 102px 0px var(--colour1);
+    animation: wave 3s infinite;
+    
 }
 
 /* Eyes */
@@ -254,6 +268,7 @@ a:active {
     top:50px;
     left:29px;
     box-shadow:50px 0 #013E51;
+    transition: .5s;
 }
   
 .smile {
@@ -263,7 +278,7 @@ a:active {
     border-radius:40%;
     top:50px;
     left:49px;
-    transition: .2s;
+    transition: .3s;
     box-shadow: #013E51 0px 6px 0px -2px;
     
 }
@@ -278,6 +293,7 @@ a:active {
     bottom:-60px;
     animation: shrink 3s ease-out infinite;
     transform-origin: center center;
+    transition: .5s;
 }
 
 .ghost {
@@ -287,6 +303,7 @@ a:active {
 @keyframes float {
     50% {
        transform: translate(0, 20px);
+       
     }
 }
   
@@ -294,5 +311,60 @@ a:active {
     50% {
       width: 90px;
       margin: 0 15px;
+      
     }
+}
+
+@keyframes wave {
+    0% {
+        transform: skewX(-20deg);
+    }
+    50% {
+        transform: skewX(20deg);
+    }
+    100% {
+        transform: skewX(-20deg);
+    }
+}
+
+
+.ghost-parent:hover .ghost:after {
+    background-color: #fe8863;
+    box-shadow: 50px 0 #fe8863;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.ghost-parent:hover .smile {
+    box-shadow: #fe8863 0px 16px 1px 1px;
+    width:25px;
+    height:5px;
+    border-radius:660%;
+    transition: .3s;
+}
+
+.ghost-parent:hover .ghost:before {
+    background-color: var(--colour3);
+    box-shadow: 17px 2px var(--colour2),34px -5px var(--colour3), 51px 1px var(--colour2),68px -5px var(--colour3),85px 3px var(--colour2), 102px 0px var(--colour3);
+}
+
+.ghost-parent:hover .ghost {
+    background-image: linear-gradient(#820f63, #fe8863  );   
+}
+
+.ghost-parent:hover .shadow {
+    background-color: rgba(48, 3, 3, 0.637);
+    transition: .5s;
+}
+
+.dropdown {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+.apps-dots:hover + .dropdown {
+    display: block;
 }
