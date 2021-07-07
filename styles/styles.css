@@ -1,3 +1,8 @@
+:root {
+    --colour1: #ffdbaa;
+    --colour2: rgb(255, 255, 255)
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -144,6 +149,8 @@
 
 .child-4 {
     height: 30vh;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .child-5 {
@@ -203,4 +210,89 @@ a:hover {
 
 a:active {
     text-decoration: underline;
+}
+  
+.parent {
+    display: flex;
+    justify-content: space-between;
+}
+  
+ .ghost-parent {
+    margin-right: 50px;
+}
+  
+  
+.ghost {
+    position: relative;
+    height:120px;
+    width:119px;
+    border-radius:100px 100px 0 0;
+    background-color: #ffdbaa;
+    transition: .2s;
+    animation: float 3s ease-out infinite;
+}
+  
+.ghost:before {
+    content:"";
+    position: absolute;
+    width:17px;
+    height:20px;
+    border-radius:50px;
+    background-color: var(--colour1);
+    top:110px;
+    box-shadow: 17px 2px var(--colour2),34px -5px var(--colour1), 51px 1px var(--colour2),68px -5px var(--colour1),85px 3px var(--colour2), 102px 0px var(--colour1);
+}
+
+/* Eyes */
+.ghost:after {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    width:13px;
+    height:13px;
+    background-color: #013E51;
+    top:50px;
+    left:29px;
+    box-shadow:50px 0 #013E51;
+}
+  
+.smile {
+    position: absolute;
+    width:25px;
+    height:15px;
+    border-radius:40%;
+    top:50px;
+    left:49px;
+    transition: .2s;
+    box-shadow: #013E51 0px 6px 0px -2px;
+    
+}
+  
+.shadow {
+    content:"";
+    position: relative;
+    background-color: rgba(0,0,0,0.1);
+    width:120px;
+    height:20px;
+    border-radius:50%;
+    bottom:-60px;
+    animation: shrink 3s ease-out infinite;
+    transform-origin: center center;
+}
+
+.ghost {
+    animation: float 3s ease-out infinite;
+}
+  
+@keyframes float {
+    50% {
+       transform: translate(0, 20px);
+    }
+}
+  
+@keyframes shrink {
+    50% {
+      width: 90px;
+      margin: 0 15px;
+    }
 }
