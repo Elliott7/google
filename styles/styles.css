@@ -240,7 +240,6 @@ a:active {
     width:119px;
     border-radius:100px 100px 0 0;
     background-color: #ffdbaa;
-    transition: .2s;
     animation: float 3s ease-out infinite;
 }
   
@@ -298,7 +297,8 @@ a:active {
 .ghost {
     animation: float 3s ease-out infinite;
 }
-  
+
+
 @keyframes float {
     50% {
        transform: translate(0, 20px);
@@ -364,16 +364,21 @@ a:active {
 .ghost-parent:hover .ghost:before {
     background-color: var(--colour3);
     box-shadow: 17px 2px var(--colour2),34px -5px var(--colour3), 51px 1px var(--colour2),68px -5px var(--colour3),85px 3px var(--colour2), 102px 0px var(--colour3);
+    animation: wave 0.2s infinite;
 }
 
 .ghost-parent:hover .ghost {
     background-image: linear-gradient(#820f63, #fe8863  );   
+    animation: float 1s ease-out infinite;
 }
+
 
 .ghost-parent:hover .shadow {
     background-color: rgba(48, 3, 3, 0.637);
     transition: .5s;
+    animation: shrink 1s ease-out infinite;
 }
+
 /* 
 .dropdown {
     display: none;
